@@ -4,18 +4,6 @@ This guide explains how to deploy a Dockerized Node.js web application to an Ama
 
 ---
 
-## 🧰 Prerequisites
-
-- An AWS account with sufficient IAM permissions
-- EC2 instance (used as admin box for provisioning)
-- IAM Role with `AdministratorAccess` attached to the EC2 instance
-- Installed tools on EC2 instance:
-  - AWS CLI
-  - `eksctl`
-  - `kubectl`
-  - Docker (optional, for building image)
-
----
 
 ## 🚀 Steps to Deploy
 
@@ -33,12 +21,11 @@ This guide explains how to deploy a Dockerized Node.js web application to an Ama
      -  Port 22 - Allow SSH 
      -  Port 8080 -HTTP (Optional)
 4. Launch the instance and wait for it to initialize.
-5. Access the instance.
-   get sudo priviliages: 
+5. Access the instance and get sudo priviliages: 
    ```bash
    sudo su -
    ```
-   update instance:
+   Update the instance:
    ```bash
    yum update -y
    ```
@@ -102,7 +89,7 @@ eksctl version
 ```
 **Install Kubectl**
 ```bash
-curl -LO "https://dl.k8s.io/release/$(curl -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
 ```
 ```bash
 chmod +x kubectl
@@ -126,4 +113,8 @@ sudo yum install -y aws-cli
 ```
 ```bash
 aws --version
+```
+**Install git**
+```bash
+yum install git -y
 ```

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-ecommerce-nodejs-app
+  labels:
+    apps: myapps
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      apps: myapps
+  template:
+    metadata:
+      labels:
+        apps: myapps
+    spec:
+      containers:
+        - name: ecommerce-nodejs-app-container
+          image: nuthan0530/sample-ecommerce-nodejs-app:latest
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
