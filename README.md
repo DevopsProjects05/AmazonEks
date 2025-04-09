@@ -118,3 +118,17 @@ aws --version
 ```bash
 yum install git -y
 ```
+#### Create cluster by using below command
+```bash
+eksctl create cluster --name My-cluster --region us-east-1 --node-type t2.medium --zones us-east-1a,us-east-1b
+```
+- **Sit back** and relax for **10 minutes** until the cluster gets created.
+  
+  
+#### You will see the screen below once you execute the above command:
+
+  ---
+
+![](/Images/Cluster%20.jpg)
+
+---

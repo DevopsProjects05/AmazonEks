@@ -1,3 +1,6 @@
+# This file defines a Kubernetes service for the sample ecommerce Node.js application.
+# It exposes the application to the outside world and allows it to be accessed via a LoadBalancer.
+
 apiVersion: v1
 kind: Service
 metadata:

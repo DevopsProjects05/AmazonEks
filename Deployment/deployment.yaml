@@ -1,3 +1,6 @@
+# This file contains the deployment configuration for the sample e-commerce Node.js application.
+# It defines the deployment, replicas, and container specifications.
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
